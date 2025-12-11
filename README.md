@@ -71,4 +71,22 @@ Hệ thống này giúp các doanh nghiệp vận tải, dịch vụ xe công ng
 ### 2.2 Tìm kiếm lịch sử di chuyển 
 ![Lưu đồ thuật toán](images/Search_Information.png)
 
+## 3. Sơ đồ kết nối 
+![Lưu đồ thuật toán](images/schematic.png)
+
+| Function / Module | Macro Name   | ESP32 Pin | Description                             |
+| ----------------- | ------------ | --------- | --------------------------------------- |
+| DHT11 Sensor      | `DHTPIN`     | 15        | Data pin của cảm biến nhiệt độ và độ ẩm |
+| DHT11 Type        | `DHTTYPE`    | DHT11     | Định nghĩa loại cảm biến                |
+| GPS Module (RX)   | `GPS_RX_PIN` | 16        | ESP32 nhận dữ liệu GPS                  |
+| GPS Module (TX)   | `GPS_TX_PIN` | 17        | ESP32 truyền dữ liệu (nếu dùng)         |
+| LED Red           | `LED_RED`    | 22        | LED báo lỗi hoặc cảnh báo               |
+| LED Green         | `LED_GREEN`  | 23        | LED báo trạng thái hoạt động            |
+| Buzzer            | `BUZZER`     | 26        | Còi báo động                            |
+| RFID SS           | `RFID_SS`    | 13        | Chân SS của module RC522                |
+| RFID RST          | `RFID_RST`   | 21        | Chân Reset của RC522                    |
+| RFID SCK          | `RFID_SCK`   | 12        | SPI Clock                               |
+| RFID MOSI         | `RFID_MOSI`  | 14        | SPI MOSI                                |
+| RFID MISO         | `RFID_MISO`  | 27        | SPI MISO                                |
+
 

@@ -1,0 +1,91 @@
+[
+    {
+        "id": "history_user",
+        "type": "ui_dropdown",
+        "z": "a4accac9d0025e72",
+        "name": "Chọn tài xế",
+        "label": "Select user",
+        "tooltip": "",
+        "place": "Select user",
+        "group": "7eee425b2d9a7cd3",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            { "label": "Đào Anh Phúc", "value": "user1", "type": "str" },
+            { "label": "Vũ Viết Duy", "value": "user2", "type": "str" }
+        ],
+        "topic": "user",
+        "x": 350,
+        "y": 940,
+        "wires": [["history_logic"]]
+    },
+    {
+        "id": "history_period",
+        "type": "ui_dropdown",
+        "z": "a4accac9d0025e72",
+        "name": "Period",
+        "label": "Period",
+        "group": "7eee425b2d9a7cd3",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            { "label": "Today", "value": "today", "type": "str" },
+            { "label": "Yesterday", "value": "yesterday", "type": "str" },
+            { "label": "This week", "value": "thisweek", "type": "str" },
+            { "label": "Last week", "value": "lastweek", "type": "str" }
+        ],
+        "topic": "period",
+        "x": 370,
+        "y": 980,
+        "wires": [["history_logic"]]
+    },
+    {
+        "id": "history_date",
+        "type": "ui_date_picker",
+        "z": "a4accac9d0025e72",
+        "name": "Pick date",
+        "label": "Pick a date",
+        "group": "7eee425b2d9a7cd3",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "date",
+        "x": 370,
+        "y": 1020,
+        "wires": [["history_logic"]]
+    },
+    {
+        "id": "history_button",
+        "type": "ui_button",
+        "z": "a4accac9d0025e72",
+        "name": "",
+        "label": "REFRESH",
+        "group": "7eee425b2d9a7cd3",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "icon": "refresh",
+        "topic": "refresh",
+        "x": 370,
+        "y": 1060,
+        "wires": [["history_logic"]]
+    },
+    {
+        "id": "history_logic",
+        "type": "function",
+        "z": "a4accac9d0025e72",
+        "name": "History Logic",
+        "func": "// Lưu trạng thái vào context\nif (msg.topic === 'user') context.set('user', msg.payload);\nif (msg.topic === 'period') context.set('period', msg.payload);\nif (msg.topic === 'date') context.set('date', msg.payload);\n\n// Chỉ chạy khi bấm REFRESH\nif (msg.topic !== 'refresh') return;\n\nlet user = context.get('user');\nlet period = context.get('period');\nlet date = context.get('date');\n\nlet query = {\n    user: user,\n    period: period,\n    date: date\n};\n\nmsg.payload = query;\nreturn msg;",
+        "outputs": 1,
+        "x": 620,
+        "y": 1000,
+        "wires": [[]]
+    }
+]

@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"name": "ESP_GPSTracker",
+			"path": "../../ESP_GPSTracker"
+		}
+	],
+	"settings": {}
+}

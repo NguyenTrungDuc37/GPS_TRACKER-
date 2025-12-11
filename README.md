@@ -89,4 +89,22 @@ Hệ thống này giúp các doanh nghiệp vận tải, dịch vụ xe công ng
 | RFID MOSI         | `RFID_MOSI`  | 14        | SPI MOSI                                |
 | RFID MISO         | `RFID_MISO`  | 27        | SPI MISO                                |
 
+# 4. Kết quả 
+##  1.Mô hình 
+![Lưu đồ thuật toán](images/model.png)
+## 2. Thông tin thiết bị 
+![Lưu đồ thuật toán](images/1.png)
+
+## 3. Nhiệt độ độ ẩm 
+![Lưu đồ thuật toán](images/2.png)
+![Lưu đồ thuật toán](images/3.png)
+**Gửi cảnh báo về EMAIL khi nhiệt độ độ ẩm cao**
+![Lưu đồ thuật toán](images/4.png)
+
+## 4. Định vị GPS theo thời gian thực 
+![Lưu đồ thuật toán](images/5.png)
+
+## 5. Tìm kiếm lịch sử di chuyển 
+![Lưu đồ thuật toán](images/6.png)
+
 

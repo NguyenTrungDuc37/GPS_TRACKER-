@@ -61,8 +61,14 @@ Hệ thống này giúp các doanh nghiệp vận tải, dịch vụ xe công ng
 - **Platform-IO**
 
 # 3. Sơ đồ khối
-![Sơ đồ khối chung](images/luudo.png)
+## 1. Sơ đồ khối chung 
+![Sơ đồ khối chung](images/Block_diagram.png)
 
+## 2. Lưu đồ thuật toán 
+### 2.1 Lưu đồ thuật toán chung 
+![Lưu đồ thuật toán](images/Flowchart.png)
 
+### 2.2 Tìm kiếm lịch sử di chuyển 
+![Lưu đồ thuật toán](images/Search_Information.png)
 
 

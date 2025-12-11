@@ -114,3 +114,8 @@ Hệ thống này giúp các doanh nghiệp vận tải, dịch vụ xe công ng
     - Định vị tài xế theo thời gian thực 
     - Tra cứu lịch sử tài xế đã đi trong tuần và khoảng thời gian 
 
+# 6 .VIDEO DEMO 
+
+https://github.com/NguyenTrungDuc37/GPS_TRACKER-/blob/main/7317507036114.mp4
+
+

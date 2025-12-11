@@ -107,4 +107,10 @@ Hệ thống này giúp các doanh nghiệp vận tải, dịch vụ xe công ng
 ## 5. Tìm kiếm lịch sử di chuyển 
 ![Lưu đồ thuật toán](images/6.png)
 
+# 5. Kết luận 
+- Thiết bị định vị GPS đã được phát triển thành công với các tính năng sau :
+    - Quản lý thông tin tài xế qua thẻ RFID 
+    - Hiển thị và cảnh báo nhiệt độ độ ẩm về EMAIL 
+    - Định vị tài xế theo thời gian thực 
+    - Tra cứu lịch sử tài xế đã đi trong tuần và khoảng thời gian 
 

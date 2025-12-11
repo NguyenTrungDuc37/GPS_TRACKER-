@@ -4,9 +4,8 @@
 #include <WiFi.h>
 #include <WiFiClientSecure.h>
 #include <PubSubClient.h>
-#include "secrets/mqtt.h"   // namespace EMQX
+#include "secrets/mqtt.h"   
 
-// biến allowDHT được định nghĩa ở main.cpp
 extern bool allowDHT;
 
 // ====== ĐỐI TƯỢNG MQTT ======
@@ -38,7 +37,7 @@ void mqtt_setup() {
 
 // ====== HANDLE MQTT (non-blocking) ======
 void mqtt_handle() {
-  // Chưa có WiFi thì không cố nối MQTT
+
   if (WiFi.status() != WL_CONNECTED) {
     return;
   }
@@ -65,7 +64,6 @@ void mqtt_handle() {
       }
     }
   } else {
-    // đã connect thì phải loop thường xuyên
     client.loop();
   }
 }

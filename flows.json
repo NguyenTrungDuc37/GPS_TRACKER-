@@ -1,0 +1,1026 @@
+[
+    {
+        "id": "a4accac9d0025e72",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0e4518112cf41d04",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "Verdana,Verdana,Geneva,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#ffffff",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": true
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": true
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": true
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": true
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": true
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": true
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": true
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": true
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": true
+                },
+                "base-font": {
+                    "value": "Verdana,Verdana,Geneva,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "true",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "mqtt_broker",
+        "type": "mqtt-broker",
+        "name": "EMQX Secure",
+        "broker": "w0e16d00.ala.asia-southeast1.emqxsl.com",
+        "port": "8883",
+        "tls": "",
+        "clientid": "NodeREDClient",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": 4,
+        "keepalive": 15,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "tab1",
+        "type": "ui_tab",
+        "name": "Cảm biến nhiệt độ độ ẩm ",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "595330e6563326a1",
+        "type": "ui_group",
+        "name": "DHT11 Sensor",
+        "tab": "tab1",
+        "order": 1,
+        "disp": true,
+        "width": 20,
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "92f6f31b18997e89",
+        "type": "ui_tab",
+        "name": "Tọa độ GPS ",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "6fadc455bea57ca2",
+        "type": "ui_group",
+        "name": "GPS Tracker",
+        "tab": "92f6f31b18997e89",
+        "order": 1,
+        "disp": true,
+        "width": 25,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "fab17cf59760295e",
+        "type": "ui_tab",
+        "name": "Thiết bị định vị GPS ",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "494ab6c75353c420",
+        "type": "ui_group",
+        "name": "Thông tin thiết bị ",
+        "tab": "fab17cf59760295e",
+        "order": 1,
+        "disp": true,
+        "width": 23,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2318cac7295f42b7",
+        "type": "ui_tab",
+        "name": "Lịch sử di chuyển ",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "7eee425b2d9a7cd3",
+        "type": "ui_group",
+        "name": "HISTORY",
+        "tab": "2318cac7295f42b7",
+        "order": 1,
+        "disp": true,
+        "width": 19,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3e7aa4c3a5237d5b",
+        "type": "mqtt in",
+        "z": "a4accac9d0025e72",
+        "name": "Temp",
+        "topic": "esp32/dht11/temperature",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "mqtt_broker",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 470,
+        "y": 260,
+        "wires": [
+            [
+                "a66cf421c24b220f",
+                "4b1b564aec6ee0f6"
+            ]
+        ]
+    },
+    {
+        "id": "a66cf421c24b220f",
+        "type": "ui_gauge",
+        "z": "a4accac9d0025e72",
+        "name": "Temperature",
+        "group": "595330e6563326a1",
+        "order": 1,
+        "width": 10,
+        "height": 5,
+        "gtype": "gage",
+        "title": "",
+        "label": "Temperature (°C)",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 60,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "fancy-gauge",
+        "x": 690,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "7d96a520a7d569d9",
+        "type": "mqtt in",
+        "z": "a4accac9d0025e72",
+        "name": "Humidity",
+        "topic": "esp32/dht11/humidity",
+        "datatype": "auto",
+        "broker": "mqtt_broker",
+        "inputs": 0,
+        "x": 480,
+        "y": 320,
+        "wires": [
+            [
+                "57c122d046613d9c",
+                "4db0c64a805ffce5"
+            ]
+        ]
+    },
+    {
+        "id": "57c122d046613d9c",
+        "type": "ui_gauge",
+        "z": "a4accac9d0025e72",
+        "name": "Humidity",
+        "group": "595330e6563326a1",
+        "order": 3,
+        "width": 10,
+        "height": 5,
+        "gtype": "gage",
+        "title": "",
+        "label": "Humidity (%)",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 100,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#d53f3f"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "fancy-gauge",
+        "x": 680,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "513ab49fd7937677",
+        "type": "mqtt in",
+        "z": "a4accac9d0025e72",
+        "name": "GPS Data",
+        "topic": "esp32/gps/data",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "mqtt_broker",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 480,
+        "y": 560,
+        "wires": [
+            [
+                "88153462ca5cf92e"
+            ]
+        ]
+    },
+    {
+        "id": "f9f38b1a4ff3d839",
+        "type": "mqtt in",
+        "z": "a4accac9d0025e72",
+        "name": "LED Status",
+        "topic": "esp32/led/status",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "mqtt_broker",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 490,
+        "y": 660,
+        "wires": [
+            [
+                "50ab0368e7011788"
+            ]
+        ]
+    },
+    {
+        "id": "50ab0368e7011788",
+        "type": "ui_template",
+        "z": "a4accac9d0025e72",
+        "group": "6fadc455bea57ca2",
+        "name": "LED Indicator",
+        "order": 3,
+        "width": 11,
+        "height": 6,
+        "format": "<style>\n    .gps-led-card {\n        background: #ffffff;\n        border-radius: 18px;\n        padding: 14px 16px 16px 16px;\n        box-shadow: 0 4px 16px rgba(15, 23, 42, 0.16);\n        border: 1px solid #e5e7eb;\n        font-family: \"Poppins\", \"Segoe UI\", sans-serif;\n        text-align: center;\n    }\n\n    .gps-led-title {\n        font-size: 16px;\n        font-weight: 700;\n        color: #111827;\n        margin-bottom: 4px;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        gap: 6px;\n    }\n\n    .gps-led-sub {\n        font-size: 12px;\n        color: #6b7280;\n        margin-bottom: 10px;\n    }\n\n    #gps-led {\n        width: 70px;\n        height: 70px;\n        border-radius: 50%;\n        border: 3px solid #111827;\n        margin: 0 auto;\n        background: grey;\n        transition: all 0.16s ease;\n        box-shadow: 0 0 0 rgba(34, 197, 94, 0);\n    }\n\n    #ledLabel {\n        font-size: 17px;\n        font-weight: 700;\n        margin-top: 10px;\n        color: #111827;\n    }\n\n    .gps-led-legend {\n        margin-top: 10px;\n        font-size: 11px;\n        color: #6b7280;\n    }\n</style>\n\n<div class=\"gps-led-card\">\n    <div class=\"gps-led-title\">\n        <span>Trạng thái GPS</span> <span>🛰️</span>\n    </div>\n    <div class=\"gps-led-sub\">\n        Đèn xanh: GPS lock OK &nbsp;•&nbsp; Đèn đỏ: chưa có tín hiệu GPS\n    </div>\n\n    <div id=\"gps-led\"></div>\n\n    <p id=\"ledLabel\">\n        Waiting...\n    </p>\n\n    <div class=\"gps-led-legend\">\n        Dữ liệu nhận từ topic <code>esp32/led/status</code>\n    </div>\n</div>\n\n<script>\n    (function(scope){\n    scope.$watch('msg.payload', function(v){\n\n        let led   = document.getElementById(\"gps-led\");\n        let label = document.getElementById(\"ledLabel\");\n        if (!v || !led || !label) return;\n\n        // Hàm set style nhanh cho từng trạng thái\n        function setLed(color, alpha, text, glow) {\n            led.style.background = color;\n            led.style.opacity = alpha;\n            led.style.boxShadow = glow;\n            label.innerHTML = text;\n        }\n\n        // ===== LED XANH =====\n        if (v === \"GREEN_ON\") {\n            setLed(\"lime\", 1, \"GPS OK\", \"0 0 16px rgba(22, 163, 74, 0.85)\");\n        }\n        else if (v === \"GREEN_OFF\") {\n            setLed(\"lime\", 0.25, \"GPS OK\", \"0 0 4px rgba(22, 163, 74, 0.35)\");\n        }\n\n        // ===== LED ĐỎ =====\n        else if (v === \"RED_ON\") {\n            setLed(\"red\", 1, \"NO GPS\", \"0 0 16px rgba(220, 38, 38, 0.85)\");\n        }\n        else if (v === \"RED_OFF\") {\n            setLed(\"red\", 0.25, \"NO GPS\", \"0 0 4px rgba(220, 38, 38, 0.35)\");\n        }\n\n    });\n})(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 700,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "88153462ca5cf92e",
+        "type": "function",
+        "z": "a4accac9d0025e72",
+        "name": "function 1",
+        "func": "// msg.payload là JSON từ ESP32: {lat, lng, speed, alt, sat, hdop, time, ...}\nlet gpsData = msg.payload;\n\n// Nếu payload là string thì parse\nif (typeof gpsData === \"string\") {\n    try {\n        gpsData = JSON.parse(gpsData);\n    } catch(e) {\n        node.warn(\"GPS payload not JSON\");\n        return null;\n    }\n}\n\n// ===== 1. LƯU LỊCH SỬ VÀO GLOBAL CONTEXT =====\nlet history = global.get('gpsHistory') || [];\n\n// Thêm điểm mới\nhistory.push({\n    lat:  gpsData.lat,\n    lng:  gpsData.lng,\n    time: gpsData.time\n});\n\n// Giới hạn số điểm (tránh quá nặng)\nconst MAX_POINTS = 2000;\nif (history.length > MAX_POINTS) {\n    history = history.slice(history.length - MAX_POINTS);\n}\n\nglobal.set('gpsHistory', history);\n\n// ===== 2. DỮ LIỆU GỬI CHO DASHBOARD (BẢNG + MAP) =====\nlet row = {\n    \"Vĩ độ\": gpsData.lat,\n    \"Kinh độ\": gpsData.lng,\n    \"Tốc độ (Km/h)\": gpsData.speed,\n    \"Độ cao (m)\": gpsData.alt,\n    \"Số vệ tinh\": gpsData.sat,\n    \"HDOP\": gpsData.hdop,\n    \"Thời gian\": gpsData.time\n};\n\n// BẢNG vẫn dùng msg.payload như cũ\nmsg.payload = [row];\n\n// MAP sẽ đọc thêm msg.history (full lịch sử)\nmsg.history = history;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 560,
+        "wires": [
+            [
+                "f9c93d717b8e6e3b",
+                "88dec21b60d12b62",
+                "c794f8699dc01922"
+            ]
+        ]
+    },
+    {
+        "id": "f9c93d717b8e6e3b",
+        "type": "ui_template",
+        "z": "a4accac9d0025e72",
+        "group": "6fadc455bea57ca2",
+        "name": "GPS_DATA",
+        "order": 2,
+        "width": 14,
+        "height": 6,
+        "format": "<style>\n    .gps-data-card {\n        background: #ffffff;\n        border-radius: 18px;\n        padding: 14px 16px 10px 16px;\n        box-shadow: 0 4px 16px rgba(15, 23, 42, 0.16);\n        border: 1px solid #e5e7eb;\n        font-family: \"Poppins\", \"Segoe UI\", sans-serif;\n    }\n\n    .gps-data-header {\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n        margin-bottom: 8px;\n    }\n\n    .gps-data-title {\n        display: flex;\n        align-items: center;\n        gap: 8px;\n    }\n\n    .gps-data-title-icon {\n        width: 28px;\n        height: 28px;\n        border-radius: 999px;\n        background: #ecfeff;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        font-size: 16px;\n    }\n\n    .gps-data-title-text {\n        font-size: 16px;\n        font-weight: 700;\n        color: #111827;\n    }\n\n    .gps-data-badge {\n        font-size: 11px;\n        padding: 3px 8px;\n        border-radius: 999px;\n        text-transform: uppercase;\n        letter-spacing: 0.4px;\n        background: #eff6ff;\n        color: #1d4ed8;\n        border: 1px solid rgba(59,130,246,0.4);\n    }\n\n    .gps-data-sub {\n        font-size: 12px;\n        color: #6b7280;\n        margin-bottom: 8px;\n    }\n\n    .gps-table-wrap {\n        max-height: 220px;\n        overflow-y: auto;\n        border-radius: 14px;\n        border: 1px solid #e5e7eb;\n    }\n\n    .gps-table {\n        width: 100%;\n        border-collapse: collapse;\n        font-size: 12px;\n        text-align: center;\n    }\n\n    .gps-table thead {\n        position: sticky;\n        top: 0;\n        z-index: 1;\n    }\n\n    .gps-table th,\n    .gps-table td {\n        padding: 6px 4px;\n        border-bottom: 1px solid #e5e7eb;\n    }\n\n    .gps-table th {\n        background: linear-gradient(135deg, #22c55e, #16a34a);\n        color: #ffffff;\n        font-weight: 600;\n        font-size: 11px;\n        text-transform: uppercase;\n    }\n\n    .gps-table tr:nth-child(even) td {\n        background-color: #f9fafb;\n    }\n\n    .gps-table tr:hover td {\n        background-color: #e5f3ff;\n    }\n</style>\n\n<div class=\"gps-data-card\">\n    <div class=\"gps-data-header\">\n        <div class=\"gps-data-title\">\n            <div class=\"gps-data-title-icon\">📊</div>\n            <div class=\"gps-data-title-text\">Thông tin GPS</div>\n        </div>\n        <div class=\"gps-data-badge\">LAST POINT</div>\n    </div>\n\n    <div class=\"gps-data-sub\">\n        Hiển thị thông số vị trí, tốc độ, độ cao, số vệ tinh và thời gian cập nhật từ ESP32.\n    </div>\n\n    <div class=\"gps-table-wrap\">\n        <table class=\"gps-table\">\n            <thead>\n                <tr>\n                    <th>Vĩ độ</th>\n                    <th>Kinh độ</th>\n                    <th>Tốc độ (Km/h)</th>\n                    <th>Độ cao (m)</th>\n                    <th>Số vệ tinh</th>\n                    <th>HDOP</th>\n                    <th>Thời gian</th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr ng-repeat=\"data in msg.payload\">\n                    <td>{{data['Vĩ độ']}}</td>\n                    <td>{{data['Kinh độ']}}</td>\n                    <td>{{data['Tốc độ (Km/h)']}}</td>\n                    <td>{{data['Độ cao (m)']}}</td>\n                    <td>{{data['Số vệ tinh']}}</td>\n                    <td>{{data['HDOP']}}</td>\n                    <td>{{data['Thời gian']}}</td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n</div>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 890,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4b1b564aec6ee0f6",
+        "type": "ui_chart",
+        "z": "a4accac9d0025e72",
+        "name": "Đồ thị nhiệt độ",
+        "group": "595330e6563326a1",
+        "order": 2,
+        "width": 10,
+        "height": 5,
+        "label": "Đồ thị nhiệt độ",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "fancy-chart",
+        "x": 700,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4db0c64a805ffce5",
+        "type": "ui_chart",
+        "z": "a4accac9d0025e72",
+        "name": "Đồ thị độ ẩm",
+        "group": "595330e6563326a1",
+        "order": 4,
+        "width": 10,
+        "height": 5,
+        "label": "Đồ thị độ ẩm ",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "fancy-chart",
+        "x": 690,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "88dec21b60d12b62",
+        "type": "ui_template",
+        "z": "a4accac9d0025e72",
+        "group": "6fadc455bea57ca2",
+        "name": "GPS_MAP",
+        "order": 1,
+        "width": 25,
+        "height": 10,
+        "format": "<link rel=\"stylesheet\" href=\"https://unpkg.com/leaflet/dist/leaflet.css\" />\n<script src=\"https://unpkg.com/leaflet/dist/leaflet.js\"></script>\n\n<style>\n    .gps-card {\n        background: #ffffff;\n        border-radius: 18px;\n        padding: 14px 16px 16px 16px;\n        box-shadow: 0 4px 16px rgba(15, 23, 42, 0.16);\n        border: 1px solid #e5e7eb;\n        font-family: \"Poppins\", \"Segoe UI\", sans-serif;\n    }\n\n    .gps-card-header {\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n        margin-bottom: 10px;\n    }\n\n    .gps-title-left {\n        display: flex;\n        align-items: center;\n        gap: 10px;\n    }\n\n    .gps-icon-badge {\n        width: 32px;\n        height: 32px;\n        border-radius: 12px;\n        background: linear-gradient(135deg, #2563eb, #4f46e5);\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        font-size: 18px;\n        color: #ffffff;\n        box-shadow: 0 4px 10px rgba(37, 99, 235, 0.5);\n    }\n\n    .gps-title-text {\n        display: flex;\n        flex-direction: column;\n        gap: 2px;\n    }\n\n    .gps-title-text h3 {\n        margin: 0;\n        font-size: 17px;\n        font-weight: 700;\n        color: #111827;\n    }\n\n    .gps-title-sub {\n        font-size: 12px;\n        color: #6b7280;\n    }\n\n    .gps-chip {\n        padding: 4px 10px;\n        border-radius: 999px;\n        font-size: 11px;\n        font-weight: 600;\n        letter-spacing: 0.4px;\n        text-transform: uppercase;\n        background: #ecfdf5;\n        color: #047857;\n        border: 1px solid rgba(16, 185, 129, 0.4);\n    }\n\n    .gps-map-wrap {\n        border-radius: 16px;\n        overflow: hidden;\n        border: 1px solid #e5e7eb;\n        margin-bottom: 8px;\n    }\n\n    #map {\n        height: 380px !important;\n        width: 100%;\n    }\n\n    .gps-address {\n        display: flex;\n        align-items: flex-start;\n        gap: 8px;\n        margin-top: 6px;\n        font-size: 13px;\n        color: #374151;\n    }\n\n    .gps-address-icon {\n        font-size: 16px;\n        margin-top: 1px;\n    }\n\n    .gps-address-text {\n        flex: 1;\n        line-height: 1.45;\n    }\n</style>\n\n<div class=\"gps-card\">\n    <div class=\"gps-card-header\">\n        <div class=\"gps-title-left\">\n            <div class=\"gps-icon-badge\">📍</div>\n            <div class=\"gps-title-text\">\n                <h3>Vị trí GPS hiện tại</h3>\n                <div class=\"gps-title-sub\">Theo dõi hành trình theo thời gian thực</div>\n            </div>\n        </div>\n        <div class=\"gps-chip\">ĐANG THEO DÕI</div>\n    </div>\n\n    <div class=\"gps-map-wrap\">\n        <div id=\"map\"></div>\n    </div>\n\n    <div class=\"gps-address\">\n        <div class=\"gps-address-icon\">📌</div>\n        <div id=\"address\" class=\"gps-address-text\">Đang tải địa chỉ...</div>\n    </div>\n</div>\n\n<script>\n    (function(scope) {\n\n    let map;\n    let marker;\n    let routePoints = [];\n    let routeLine;\n    let historyInitialized = false;\n\n    function initMap() {\n        // View tạm ban đầu\n        map = L.map('map').setView([21.0285, 105.8542], 14);\n\n        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {\n            maxZoom: 19\n        }).addTo(map);\n\n        marker = L.marker([21.0285, 105.8542]).addTo(map);\n\n        // Polyline để vẽ đường đi (màu đỏ)\n        routeLine = L.polyline(routePoints, { color: 'red', weight: 4 }).addTo(map);\n    }\n\n    function updateAddress(lat, lng) {\n        fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json`)\n            .then(res => res.json())\n            .then(data => {\n                let addr = data.display_name || \"Không tìm thấy địa chỉ\";\n                document.getElementById(\"address\").innerText = addr;\n                marker.bindPopup(addr).openPopup();\n            })\n            .catch(err => {\n                document.getElementById(\"address\").innerText = \"Không thể lấy địa chỉ!\";\n            });\n    }\n\n    // Khởi tạo map sau 300ms\n    setTimeout(initMap, 300);\n\n    scope.$watch('msg', function(msg) {\n        if (!msg) return;\n        if (!map || !marker || !routeLine) return;\n\n        // ===== 1. HISTORY đầy đủ lần đầu =====\n        if (!historyInitialized && Array.isArray(msg.history) && msg.history.length > 0) {\n            routePoints = [];\n\n            msg.history.forEach(function(p) {\n                if (p && p.lat && p.lng) {\n                    routePoints.push([p.lat, p.lng]);\n                }\n            });\n\n            if (routePoints.length > 0) {\n                routeLine.setLatLngs(routePoints);\n\n                // Điểm cuối\n                let last = routePoints[routePoints.length - 1];\n                marker.setLatLng(last);\n                map.setView(last, 15);\n\n                updateAddress(last[0], last[1]);\n            }\n\n            historyInitialized = true;\n        }\n\n        // ===== 2. Điểm GPS mới từ msg.payload[0] =====\n        if (!msg.payload || !Array.isArray(msg.payload) || !msg.payload[0]) return;\n\n        let gps = msg.payload[0];\n\n        let lat = gps[\"Vĩ độ\"];\n        let lng = gps[\"Kinh độ\"];\n\n        if (!lat || !lng) return;\n\n        let point = [lat, lng];\n\n        // Chỉ thêm nếu khác điểm cuối\n        if (routePoints.length === 0 ||\n            routePoints[routePoints.length - 1][0] !== lat ||\n            routePoints[routePoints.length - 1][1] !== lng) {\n\n            routePoints.push(point);\n            routeLine.setLatLngs(routePoints);\n        }\n\n        marker.setLatLng(point);\n        map.setView(point, 15);\n\n        updateAddress(lat, lng);\n    });\n\n})(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 890,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "735fead9bd145a62",
+        "type": "mqtt out",
+        "z": "a4accac9d0025e72",
+        "name": "Nút điều khiển",
+        "topic": "",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "mqtt_broker",
+        "x": 700,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "9db2adbff955e2d8",
+        "type": "ui_switch",
+        "z": "a4accac9d0025e72",
+        "name": "",
+        "label": "ON/OFF",
+        "tooltip": "",
+        "group": "595330e6563326a1",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "esp32/switch",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "switch-ios",
+        "x": 480,
+        "y": 440,
+        "wires": [
+            [
+                "735fead9bd145a62"
+            ]
+        ]
+    },
+    {
+        "id": "242b434b7808ce9d",
+        "type": "ui_template",
+        "z": "a4accac9d0025e72",
+        "group": "595330e6563326a1",
+        "name": "",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n    /* ----- Chart Card ----- */\n    .fancy-chart {\n        border-radius: 16px !important;\n        background: #ffffffcc !important;\n        padding: 10px !important;\n        border: 1px solid #e0e0e0 !important;\n        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08) !important;\n        transition: 0.3s ease-in-out !important;\n        margin-bottom: 15px !important;\n    }\n\n    /* Hover nổi lên */\n    .fancy-chart:hover {\n        transform: translateY(-4px);\n        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15) !important;\n    }\n\n    /* Title đẹp */\n    .fancy-chart .nr-dashboard-chart-title {\n        font-weight: 600 !important;\n        color: #333 !important;\n    }\n\n\n    /* ----- Gauge ----- */\n    .fancy-gauge {\n        border-radius: 16px !important;\n        background: #ffffffcc !important;\n        padding: 12px !important;\n        border: 1px solid #e0e0e0 !important;\n        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08) !important;\n        transition: 0.3s ease-in-out !important;\n        display: inline-block !important;\n        width: 48% !important;        /* 2 gauge nằm ngang */\n        margin-bottom: 15px !important;\n        margin-right: 1% !important;\n    }\n\n    /* Hover gauge */\n    .fancy-gauge:hover {\n        transform: translateY(-4px);\n        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15) !important;\n    }\n\n    /* Tên gauge */\n    .fancy-gauge .nr-dashboard-gauge-title {\n        font-weight: 600 !important;\n        color: #333 !important;\n    }\n</style>\n<style>\n.switch-ios .md-switch-thumb {\n  background: #fff !important;\n  box-shadow: 0 2px 6px rgba(0,0,0,0.25);\n}\n\n.switch-ios md-switch.md-checked .md-switch-thumb {\n  transform: translate3d(20px,0,0);\n}\n\n.switch-ios md-switch .md-switch-bar {\n  border-radius: 20px;\n  height: 22px;\n  width: 44px;\n  transition: background 0.25s ease;\n}\n\n.switch-ios md-switch.md-checked .md-switch-bar {\n  background: #4cd964 !important; /* Màu xanh kiểu iOS */\n}\n\n.switch-ios md-switch:not(.md-checked) .md-switch-bar {\n  background: #ddd !important;  /* Màu xám khi OFF */\n}\n\n.switch-ios md-switch {\n  transform: scale(1.2); \n  margin: 10px;\n}\n</style>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1120,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "562d8e3f146d0251",
+        "type": "mqtt in",
+        "z": "a4accac9d0025e72",
+        "name": "STATUS WIFI",
+        "topic": "esp32/status/wifi",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "mqtt_broker",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 490,
+        "y": 720,
+        "wires": [
+            [
+                "572975cc31a20582"
+            ]
+        ]
+    },
+    {
+        "id": "8abb176a01676e3d",
+        "type": "mqtt in",
+        "z": "a4accac9d0025e72",
+        "name": "UID",
+        "topic": "esp32/rfid/uid",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "mqtt_broker",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 470,
+        "y": 780,
+        "wires": [
+            [
+                "642495db8d1fb851"
+            ]
+        ]
+    },
+    {
+        "id": "642495db8d1fb851",
+        "type": "ui_template",
+        "z": "a4accac9d0025e72",
+        "group": "494ab6c75353c420",
+        "name": "UID",
+        "order": 2,
+        "width": 10,
+        "height": 8,
+        "format": "<style>\n    .device-card {\n        width: 100%;\n        max-width: 420px;\n        margin: 0 auto 16px auto;\n\n        background: #ffffff;\n        padding: 18px 20px 20px 20px;\n        border-radius: 18px;\n        box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);\n        font-family: \"Poppins\", \"Segoe UI\", sans-serif;\n        border: 1px solid #e5e7eb;\n        animation: fadeIn 0.3s ease;\n        text-align: center;\n\n        /* ===== KÉO DÀI THEO CHIỀU DỌC ===== */\n        min-height: 360px;              /* chỉnh số này nếu muốn cao thêm */\n        display: flex;\n        flex-direction: column;\n        justify-content: flex-start;\n    }\n\n    .device-header {\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        gap: 8px;\n        margin-bottom: 10px;\n    }\n\n    .device-icon {\n        font-size: 22px;\n    }\n\n    .device-title {\n        font-size: 18px;\n        font-weight: 700;\n        color: #111827;\n    }\n\n    .uid-box {\n        font-size: 20px;\n        font-weight: 700;\n        background: #f9fafb;\n        color: #2563eb;\n        padding: 8px 14px;\n        border-radius: 10px;\n        border: 1px solid #bfdbfe;\n        display: inline-block;\n        min-width: 180px;\n        box-shadow: 0 0 6px rgba(37, 99, 235, 0.18);\n        margin-bottom: 14px;\n    }\n\n    .driver-layout {\n        display: flex;\n        gap: 14px;\n        align-items: flex-start;\n        justify-content: center;\n        flex-wrap: wrap;\n        margin-bottom: 10px;\n    }\n\n    .driver-photo img {\n        width: 140px;\n        height: 140px;\n        border-radius: 16px;\n        object-fit: cover;\n        border: 3px solid #2563eb;\n        box-shadow: 0 0 8px rgba(37, 99, 235, 0.25);\n    }\n\n    .driver-info {\n        min-width: 180px;\n        text-align: left;\n        font-size: 14px;\n    }\n\n    .info-row {\n        background: #f9fafb;\n        padding: 8px 10px;\n        border-radius: 10px;\n        margin-bottom: 6px;\n        border: 1px solid #e5e7eb;\n        display: flex;\n        align-items: center;\n        gap: 6px;\n    }\n\n    .info-icon {\n        font-size: 16px;\n        width: 22px;\n        text-align: center;\n    }\n\n    .info-text b {\n        font-weight: 600;\n        color: #111827;\n    }\n\n    .info-text span {\n        color: #374151;\n    }\n\n    .note-text {\n        margin-top: auto; /* đẩy xuống đáy card cho nhìn cân đối */\n        color: #6b7280;\n        font-size: 12px;\n    }\n\n    .alert-box {\n        background:#fef2f2;\n        padding: 10px;\n        border-radius:10px;\n        color:#b91c1c;\n        text-align:center;\n        border:1px solid #fecaca;\n        font-size:13px;\n    }\n\n    @keyframes fadeIn {\n        from { opacity: 0; transform: translateY(6px); }\n        to   { opacity: 1; transform: translateY(0); }\n    }\n</style>\n\n<div class=\"device-card\">\n    <div class=\"device-header\">\n        <div class=\"device-icon\">🪪</div>\n        <div class=\"device-title\">Thông tin tài xế</div>\n    </div>\n\n    <div id=\"cardBox\" class=\"uid-box\">Waiting…</div>\n\n    <div class=\"driver-layout\">\n        <div id=\"imgBox\" class=\"driver-photo\" style=\"display:none;\">\n            <img id=\"userImg\" src=\"\" alt=\"Driver\">\n        </div>\n\n        <div id=\"infoBox\" class=\"driver-info\" style=\"display:none;\"></div>\n    </div>\n\n    <div class=\"note-text\">\n        Quét thẻ RFID để hiển thị thông tin tài xế.\n    </div>\n</div>\n\n<script>\n(function(scope) {\n\n    const cardBox = document.getElementById(\"cardBox\");\n    const infoBox = document.getElementById(\"infoBox\");\n    const imgBox = document.getElementById(\"imgBox\");\n    const userImg = document.getElementById(\"userImg\");\n\n    const userDB = {\n        \"1395C8C\": {\n            name: \"Đào Anh Phúc\",\n            age: 22,\n            vehicle: \"Honda SH\",\n            plate: \"29A1-123.45\",\n            img: \"/anh1.png\"\n        },\n        \"C1E9D324\": {\n            name: \"Vũ Viết Duy\",\n            age: 21,\n            vehicle: \"Vision 2020\",\n            plate: \"30F1-678.99\",\n            img: \"/anh2.png\"\n        },\n        \"9F9FD24\": {\n            name: \"Đỗ Văn Bin\",\n            age: 19,\n            vehicle: \"Exciter 150\",\n            plate: \"99B1-456.12\",\n            img: \"/anh3.png\"\n        }\n    };\n\n    const infoRow = (label, value, icon) => `\n        <div class=\"info-row\">\n            <div class=\"info-icon\">${icon}</div>\n            <div class=\"info-text\"><b>${label}:</b> <span>${value}</span></div>\n        </div>\n    `;\n\n    scope.$watch('msg', function(msg) {\n        if (!msg) return;\n\n        let uid = String(msg.payload || \"\").trim().toUpperCase();\n\n        cardBox.innerText = uid || \"Unknown\";\n\n        cardBox.animate(\n            [\n                { transform: \"scale(1)\",   opacity: 0.7 },\n                { transform: \"scale(1.06)\", opacity: 1 },\n                { transform: \"scale(1)\",   opacity: 1 }\n            ],\n            { duration: 200 }\n        );\n\n        if (userDB[uid]) {\n            let u = userDB[uid];\n\n            infoBox.innerHTML =\n                infoRow(\"Tên\",     u.name,    \"👤\") +\n                infoRow(\"Tuổi\",    u.age,     \"🎂\") +\n                infoRow(\"Loại xe\", u.vehicle, \"🏍️\") +\n                infoRow(\"Biển số\", u.plate,   \"📛\");\n\n            infoBox.style.display = \"block\";\n            userImg.src = u.img;\n            imgBox.style.display = \"block\";\n        } else {\n            infoBox.innerHTML = `\n                <div class=\"alert-box\">\n                    ❌ UID chưa đăng ký trong hệ thống!\n                </div>\n            `;\n            infoBox.style.display = \"block\";\n            imgBox.style.display = \"none\";\n        }\n    });\n\n})(scope);\n</script>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 670,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8888db4a3515ce78",
+        "type": "ui_template",
+        "z": "a4accac9d0025e72",
+        "group": "595330e6563326a1",
+        "name": "Cảnh báo DHT11",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "format": "<div id=\"dhtStatusBox\" style=\"\n    padding:15px;\n    border-radius:12px;\n    text-align:center;\n    font-size:20px;\n    font-weight:bold;\n    color:white;\n    background:#444;\n    box-shadow:0 4px 10px rgba(0,0,0,0.2);\n\">\n    Đang chờ dữ liệu...\n</div>\n\n<script>\n    (function(scope) {\n\n    scope.$watch('msg.payload', function(status) {\n        if (!status) return;\n\n        status = String(status).trim();\n        let box = document.getElementById(\"dhtStatusBox\");\n\n        // ====== OK ======\n        if (status === \"OK\") {\n            box.style.background = \"#28a745\"; \n            box.innerHTML = \"🌿 Trạng thái TỐT\";\n        }\n\n        // ====== ERROR ======\n        else if (status === \"ERROR\") {\n            box.style.background = \"#dc3545\"; \n            box.innerHTML = \"⚠️ NGUY HIỂM - Nhiệt/Độ ẩm cao!\";\n        }\n\n        // ====== OFF ======\n        else if (status === \"OFF\") {\n            box.style.background = \"#6c757d\"; \n            box.innerHTML = \"⛔ Cảm biến đang tắt\";\n        }\n\n        // ====== UNKNOWN ======\n        else {\n            box.style.background = \"#444\"; \n            box.innerHTML = \"Không rõ trạng thái\";\n        }\n    });\n\n})(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 730,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "28b23c45cef3fdee",
+        "type": "mqtt in",
+        "z": "a4accac9d0025e72",
+        "name": "",
+        "topic": "esp32/dht11/status",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "mqtt_broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 510,
+        "y": 60,
+        "wires": [
+            [
+                "8888db4a3515ce78",
+                "0eee52493b465091"
+            ]
+        ]
+    },
+    {
+        "id": "908d6ba4f3644d3a",
+        "type": "e-mail",
+        "z": "a4accac9d0025e72",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": true,
+        "tls": true,
+        "name": "thamnguyen1909k@gmail.com",
+        "dname": "TEST EMAIL ",
+        "x": 1170,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "4284929db95c9480",
+        "type": "switch",
+        "z": "a4accac9d0025e72",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "ERROR",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 830,
+        "y": 160,
+        "wires": [
+            [
+                "6cec82f9bf54f982"
+            ]
+        ]
+    },
+    {
+        "id": "0eee52493b465091",
+        "type": "rbe",
+        "z": "a4accac9d0025e72",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 690,
+        "y": 160,
+        "wires": [
+            [
+                "4284929db95c9480"
+            ]
+        ]
+    },
+    {
+        "id": "6cec82f9bf54f982",
+        "type": "function",
+        "z": "a4accac9d0025e72",
+        "name": "function 2",
+        "func": "let now = new Date();\nlet timeStr =\n    now.getFullYear() + \"-\" +\n    String(now.getMonth() + 1).padStart(2, \"0\") + \"-\" +\n    String(now.getDate()).padStart(2, \"0\") + \" \" +\n    String(now.getHours()).padStart(2, \"0\") + \":\" +\n    String(now.getMinutes()).padStart(2, \"0\") + \":\" +\n    String(now.getSeconds()).padStart(2, \"0\");\n\nmsg.topic = \"⚠️ Cảnh báo DHT11\";\nmsg.payload =\n    \"⚠️ DHT11 ERROR - Nhiệt độ/Độ ẩm vượt ngưỡng!\\n\"\n    + \"📌 Thời điểm: \" + timeStr + \"\\n\"\n    + \"📡 Từ ESP32 của bạn.\";\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 160,
+        "wires": [
+            [
+                "908d6ba4f3644d3a"
+            ]
+        ]
+    },
+    {
+        "id": "b8afc76b034ea2ca",
+        "type": "ui_dropdown",
+        "z": "a4accac9d0025e72",
+        "name": "",
+        "label": "Select user",
+        "tooltip": "",
+        "place": "",
+        "group": "7eee425b2d9a7cd3",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Đào Anh Phúc",
+                "value": "user1",
+                "type": "str"
+            },
+            {
+                "label": "Vũ Viết Duy",
+                "value": "user2",
+                "type": "str"
+            }
+        ],
+        "topic": "user",
+        "topicType": "str",
+        "className": "",
+        "x": 490,
+        "y": 860,
+        "wires": [
+            [
+                "e7c06f683f3fdf2d"
+            ]
+        ]
+    },
+    {
+        "id": "417efd2c8a5dc863",
+        "type": "ui_dropdown",
+        "z": "a4accac9d0025e72",
+        "name": "",
+        "label": "Period",
+        "tooltip": "",
+        "place": "",
+        "group": "7eee425b2d9a7cd3",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Today",
+                "value": "today",
+                "type": "str"
+            },
+            {
+                "label": "Yesterday",
+                "value": "yesterday",
+                "type": "str"
+            },
+            {
+                "label": "This Week",
+                "value": "week",
+                "type": "str"
+            }
+        ],
+        "topic": "period",
+        "topicType": "str",
+        "className": "",
+        "x": 470,
+        "y": 910,
+        "wires": [
+            [
+                "e7c06f683f3fdf2d"
+            ]
+        ]
+    },
+    {
+        "id": "65a6f130abac94de",
+        "type": "ui_date_picker",
+        "z": "a4accac9d0025e72",
+        "name": "",
+        "label": "Pick a date",
+        "group": "7eee425b2d9a7cd3",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "date",
+        "topicType": "str",
+        "className": "",
+        "x": 490,
+        "y": 960,
+        "wires": [
+            [
+                "e7c06f683f3fdf2d"
+            ]
+        ]
+    },
+    {
+        "id": "6953d98f9b1bd549",
+        "type": "ui_button",
+        "z": "a4accac9d0025e72",
+        "name": "",
+        "group": "7eee425b2d9a7cd3",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "SEARCH",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "search",
+        "topicType": "str",
+        "x": 480,
+        "y": 1000,
+        "wires": [
+            [
+                "e7c06f683f3fdf2d"
+            ]
+        ]
+    },
+    {
+        "id": "e7c06f683f3fdf2d",
+        "type": "function",
+        "z": "a4accac9d0025e72",
+        "name": "History Logic",
+        "func": "// =========================\n// LƯU GIÁ TRỊ TỪ UI\n// =========================\nif (msg.topic === \"user\") {\n    // user: user1 / user2\n    context.set(\"user\", msg.payload);\n    return null;\n}\n\nif (msg.topic === \"period\") {\n    // period: today / yesterday / week\n    context.set(\"period\", msg.payload);\n    return null;\n}\n\nif (msg.topic === \"date\") {\n    // UI date picker có thể trả về number (timestamp) hoặc string\n    let d = msg.payload;\n    let dateStr = \"\";\n\n    if (typeof d === \"number\") {\n        // timestamp ms\n        let dt = new Date(d);\n        let y = dt.getFullYear();\n        let m = String(dt.getMonth() + 1).padStart(2, \"0\");\n        let da = String(dt.getDate()).padStart(2, \"0\");\n        dateStr = `${y}-${m}-${da}`;\n    } else if (typeof d === \"string\") {\n        // cố gắng bóc YYYY-MM-DD ra\n        let m = d.match(/\\d{4}-\\d{2}-\\d{2}/);\n        dateStr = m ? m[0] : d;\n    } else {\n        dateStr = \"2025-12-10\"; // fallback\n    }\n\n    context.set(\"date\", dateStr);\n    return null;\n}\n\n// =========================\n// CHỈ XỬ LÝ KHI NHẤN SEARCH/REFRESH\n// =========================\nif (msg.topic !== \"search\" && msg.topic !== \"refresh\") return null;\n\n// Lấy lại giá trị đã lưu\nlet user   = context.get(\"user\")   || \"user1\";\nlet period = context.get(\"period\") || \"today\";\nlet date   = context.get(\"date\")   || \"2025-12-10\";\n\n// =========================\n// DATA GIẢ CẤU HÌNH SẴN\n// (có thể thay bằng DB / MQTT sau)\n// =========================\nconst HISTORY = {\n    \"user1\": {\n        // =======================\n        // 8/12 – Hồ Gươm → Nhà Thờ → Lăng Bác → Hồ Tây\n        // =======================\n        \"2025-12-08\": [\n            { lat: 21.028511, lng: 105.848495, speed: 12, time: \"2025-12-08 08:00:00\", place: \"Phố Cổ Hà Nội\" },\n            { lat: 21.026774, lng: 105.852020, speed: 18, time: \"2025-12-08 08:10:00\", place: \"Hồ Hoàn Kiếm\" },\n            { lat: 21.028916, lng: 105.849705, speed: 22, time: \"2025-12-08 08:20:00\", place: \"Nhà Thờ Lớn\" },\n            { lat: 21.036815, lng: 105.836536, speed: 25, time: \"2025-12-08 08:35:00\", place: \"Lăng Chủ tịch Hồ Chí Minh\" },\n            { lat: 21.047313, lng: 105.828083, speed: 30, time: \"2025-12-08 08:50:00\", place: \"Hồ Tây\" }\n        ],\n\n        // =======================\n        // 9/12 – Cầu Long Biên → Chợ Đồng Xuân → Hồ Gươm\n        // =======================\n        \"2025-12-09\": [\n            { lat: 21.037295, lng: 105.889267, speed: 15, time: \"2025-12-09 09:00:00\", place: \"Cầu Long Biên\" },\n            { lat: 21.040459, lng: 105.846725, speed: 20, time: \"2025-12-09 09:15:00\", place: \"Chợ Đồng Xuân\" },\n            { lat: 21.033781, lng: 105.851757, speed: 27, time: \"2025-12-09 09:25:00\", place: \"Hàng Đào\" },\n            { lat: 21.026774, lng: 105.852020, speed: 23, time: \"2025-12-09 09:40:00\", place: \"Hồ Hoàn Kiếm\" }\n        ],\n\n        // =======================\n        // 10/12 – Cầu Nhật Tân → Hồ Tây → Phố Cổ\n        // =======================\n        \"2025-12-10\": [\n            { lat: 21.081982, lng: 105.808540, speed: 30, time: \"2025-12-10 14:00:00\", place: \"Cầu Nhật Tân\" },\n            { lat: 21.066245, lng: 105.826111, speed: 22, time: \"2025-12-10 14:10:00\", place: \"Phủ Tây Hồ\" },\n            { lat: 21.056722, lng: 105.833076, speed: 20, time: \"2025-12-10 14:20:00\", place: \"Hồ Tây\" },\n            { lat: 21.028916, lng: 105.849705, speed: 18, time: \"2025-12-10 14:35:00\", place: \"Nhà Thờ Lớn\" },\n            { lat: 21.028120, lng: 105.852027, speed: 15, time: \"2025-12-10 14:45:00\", place: \"Hồ Hoàn Kiếm\" }\n        ]\n    },\n\n    // ======================================================\n    // USER 2 — Lộ trình đẹp từ Bách Khoa → Royal → Keangnam\n    // ======================================================\n    \"user2\": {\n        // =======================\n        // 8/12 – ĐHBK → Công Viên Thống Nhất → Hồ Gươm\n        // =======================\n        \"2025-12-08\": [\n            { lat: 21.005023, lng: 105.843192, speed: 10, time: \"2025-12-08 07:40:00\", place: \"Đại học Bách Khoa Hà Nội\" },\n            { lat: 21.013113, lng: 105.847352, speed: 15, time: \"2025-12-08 07:55:00\", place: \"Công viên Thống Nhất\" },\n            { lat: 21.026774, lng: 105.852020, speed: 20, time: \"2025-12-08 08:10:00\", place: \"Hồ Hoàn Kiếm\" }\n        ],\n\n        // =======================\n        // 9/12 – Royal City → Nguyễn Trãi → Ngã Tư Sở\n        // =======================\n        \"2025-12-09\": [\n            { lat: 21.002642, lng: 105.815529, speed: 18, time: \"2025-12-09 09:00:00\", place: \"Royal City\" },\n            { lat: 21.007891, lng: 105.816864, speed: 25, time: \"2025-12-09 09:15:00\", place: \"Nguyễn Trãi\" },\n            { lat: 21.013521, lng: 105.821899, speed: 22, time: \"2025-12-09 09:30:00\", place: \"Ngã Tư Sở\" }\n        ],\n\n        // =======================\n        // 10/12 – Keangnam → Phạm Hùng → Cầu Giấy\n        // =======================\n        \"2025-12-10\": [\n            { lat: 21.017020, lng: 105.783524, speed: 28, time: \"2025-12-10 09:00:00\", place: \"Keangnam Landmark 72\" },\n            { lat: 21.030009, lng: 105.781670, speed: 32, time: \"2025-12-10 09:15:00\", place: \"Phạm Hùng\" },\n            { lat: 21.033557, lng: 105.800461, speed: 26, time: \"2025-12-10 09:25:00\", place: \"Cầu Giấy\" }\n        ]\n    }\n};\n\n\n// =========================\n// CHỌN ROUTE THEO PERIOD\n// =========================\nlet route = [];\nlet userData = HISTORY[user] || {};\n\nif (period === \"today\") {\n    // chốt date hiện tại là key\n    route = userData[\"2025-12-10\"] || [];\n    date  = \"2025-12-10\";\n}\nelse if (period === \"yesterday\") {\n    route = userData[\"2025-12-09\"] || [];\n    date  = \"2025-12-09\";\n}\nelse if (period === \"week\") {\n    // ghép tất cả ngày trong tuần demo\n    Object.keys(userData).forEach(d => {\n        route = route.concat(userData[d]);\n    });\n} else {\n    // nếu period lạ → dùng đúng date đã chọn\n    route = userData[date] || [];\n}\n\n// =========================\n// TÍNH QUÃNG ĐƯỜNG / TỐC ĐỘ\n// =========================\nfunction haversine(a, b) {\n    const R = 6371; // km\n    const toRad = x => x * Math.PI / 180;\n    let dLat = toRad(b.lat - a.lat);\n    let dLng = toRad(b.lng - a.lng);\n\n    let s =\n        Math.sin(dLat/2)**2 +\n        Math.cos(toRad(a.lat)) * Math.cos(toRad(b.lat)) *\n        Math.sin(dLng/2)**2;\n\n    return 2 * R * Math.asin(Math.sqrt(s));\n}\n\nlet totalDist = 0;\nfor (let i = 1; i < route.length; i++) {\n    totalDist += haversine(route[i-1], route[i]);\n}\n\nlet maxSpeed = Math.max(...route.map(p => p.speed), 0);\nlet avgSpeed = route.length > 0\n    ? (route.reduce((s,p)=>s+p.speed,0) / route.length).toFixed(1)\n    : 0;\n\n// =========================\n// TRẢ DỮ LIỆU CHO UI TEMPLATE\n// =========================\nmsg.payload = {\n    user,\n    period,\n    date,\n    route,\n    summary: {\n        totalDist: totalDist.toFixed(2),\n        maxSpeed,\n        avgSpeed\n    }\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 960,
+        "wires": [
+            [
+                "d3024a59b3155adb"
+            ]
+        ]
+    },
+    {
+        "id": "d3024a59b3155adb",
+        "type": "ui_template",
+        "z": "a4accac9d0025e72",
+        "group": "7eee425b2d9a7cd3",
+        "name": "Map UI",
+        "order": 6,
+        "width": 19,
+        "height": 15,
+        "format": "<link rel=\"stylesheet\" href=\"https://unpkg.com/leaflet/dist/leaflet.css\" />\n<script src=\"https://unpkg.com/leaflet/dist/leaflet.js\"></script>\n\n<style>\n#historyMap {\n    width: 100%;\n    height: 420px;\n    border-radius: 12px;\n    box-shadow: 0 4px 10px rgba(0,0,0,0.15);\n}\n\n/* Bảng danh sách */\n.table-box {\n    margin-top: 15px;\n    padding: 10px;\n    background: #f6f9ff;\n    border-radius: 10px;\n    box-shadow: 0 3px 8px rgba(0,0,0,0.1);\n}\n\n#routeTable {\n    width: 100%;\n    border-collapse: collapse;\n}\n\n#routeTable th, #routeTable td {\n    border-bottom: 1px solid #dcdcdc;\n    padding: 6px 8px;\n    text-align: left;\n    font-size: 14px;\n}\n\n#routeTable tr:hover {\n    background: #e9f1ff;\n    cursor: pointer;\n}\n</style>\n\n<div>\n    <h3>📍 Các điểm đã đến</h3>\n    <div id=\"historyMap\"></div>\n\n    <div class=\"table-box\">\n        <h4>📄 Danh sách địa điểm</h4>\n        <table id=\"routeTable\">\n            <thead>\n                <tr>\n                    <th>#</th>\n                    <th>Địa điểm</th>\n                    <th>Thời gian</th>\n                    <th>Tốc độ</th>\n                    <th>Tọa độ</th>\n                </tr>\n            </thead>\n            <tbody id=\"routeBody\"></tbody>\n        </table>\n    </div>\n</div>\n\n<script>\n(function(scope) {\n\nlet map;\nlet markers = [];\n\nfunction initMap() {\n    map = L.map(\"historyMap\").setView([21.03, 105.85], 14);\n\n    L.tileLayer(\"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png\", {\n        maxZoom: 19\n    }).addTo(map);\n}\n\ninitMap();\n\nfunction clearMarkers() {\n    markers.forEach(m => map.removeLayer(m));\n    markers = [];\n}\n\nscope.$watch(\"msg\", msg => {\n\n    if (!msg || !msg.payload || !msg.payload.route) return;\n\n    let route = msg.payload.route;\n\n    // Fix map size bug\n    setTimeout(() => map.invalidateSize(true), 300);\n\n    clearMarkers();\n\n    let latlngs = [];\n\n    // Reset table\n    let tbody = document.getElementById(\"routeBody\");\n    tbody.innerHTML = \"\";\n\n    // ============================\n    // TẠO MARKER + LABEL + POPUP\n    // ============================\n    route.forEach((p, i) => {\n\n        let mk = L.marker([p.lat, p.lng], {\n            icon: L.divIcon({\n                className: \"custom-marker\",\n                html: `\n                    <div style=\"text-align:center;\">\n                        <img src=\"https://cdn-icons-png.flaticon.com/512/684/684908.png\"\n                             style=\"width:26px; height:26px;\">\n                        <div style=\"\n                            background:white;\n                            padding:2px 6px;\n                            border-radius:6px;\n                            margin-top:2px;\n                            font-size:12px;\n                            font-weight:bold;\n                            color:#333;\n                            box-shadow:0 2px 4px rgba(0,0,0,0.25);\n                        \">\n                            ${p.place || (\"Điểm \" + (i+1))}\n                        </div>\n                    </div>\n                `\n            })\n        }).addTo(map);\n\n        mk.bindPopup(\n            `<b>Điểm ${i+1}</b><br>\n             📍 <b>${p.place || \"Không rõ\"}</b><br>\n             ⏱ ${p.time}<br>\n             🚗 ${p.speed} km/h<br>\n             🌐 ${p.lat}, ${p.lng}`\n        );\n\n        markers.push(mk);\n        latlngs.push([p.lat, p.lng]);\n\n        // ============================\n        // THÊM DÒNG VÀO BẢNG\n        // ============================\n        let tr = document.createElement(\"tr\");\n        tr.innerHTML = `\n            <td>${i+1}</td>\n            <td>${p.place || \"Không rõ\"}</td>\n            <td>${p.time}</td>\n            <td>${p.speed} km/h</td>\n            <td>${p.lat.toFixed(5)}, ${p.lng.toFixed(5)}</td>\n        `;\n\n        // CLICK = ZOOM TỚI MARKER + MỞ POPUP\n        tr.onclick = () => {\n            map.setView([p.lat, p.lng], 17);\n            mk.openPopup();\n        };\n\n        tbody.appendChild(tr);\n    });\n\n    if (latlngs.length > 0) map.fitBounds(latlngs);\n\n});\n\n})(scope);\n</script>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 920,
+        "y": 960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "572975cc31a20582",
+        "type": "ui_template",
+        "z": "a4accac9d0025e72",
+        "group": "494ab6c75353c420",
+        "name": "STATUS_WIFI_MQTT",
+        "order": 1,
+        "width": 13,
+        "height": 8,
+        "format": "<style>\n    .device-card {\n        width: 100%;\n        max-width: 430px;\n        margin: 0 auto 16px auto;\n\n        background: linear-gradient(145deg, #ffffff, #f4f6ff);\n        padding: 18px 20px 16px 20px;\n        border-radius: 20px;\n        box-shadow: 0 4px 18px rgba(15, 23, 42, 0.12);\n        font-family: \"Poppins\", \"Segoe UI\", sans-serif;\n        border: 1px solid #e3e6ff;\n        animation: fadeIn 0.3s ease;\n    }\n\n    .device-header {\n        display: flex;\n        align-items: center;\n        justify-content: flex-start;\n        gap: 10px;\n        margin-bottom: 8px;\n    }\n\n    .device-icon {\n        font-size: 24px;\n    }\n\n    .device-title {\n        font-size: 18px;\n        font-weight: 700;\n        color: #374151;\n        letter-spacing: 0.3px;\n    }\n\n    .device-subtitle {\n        font-size: 13px;\n        color: #6b7280;\n        margin-bottom: 10px;\n    }\n\n    .status-group {\n        display: flex;\n        flex-direction: column;\n        gap: 10px;\n    }\n\n    .status-block {\n        display: flex;\n        align-items: center;\n        gap: 12px;\n\n        background: linear-gradient(135deg, #f9fafb, #f3f4ff);\n        border-radius: 16px;\n        padding: 10px 12px;\n        border: 1px solid #e5e7eb;\n    }\n\n    .block-icon {\n        width: 34px;\n        height: 34px;\n        border-radius: 12px;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        font-size: 20px;\n        background: #ffffff;\n        box-shadow: 0 1px 4px rgba(148, 163, 184, 0.35);\n    }\n\n    .block-text {\n        flex: 1;\n        min-width: 0;\n    }\n\n    .block-title {\n        font-size: 14px;\n        font-weight: 600;\n        color: #111827;\n        margin-bottom: 2px;\n    }\n\n    .block-sub {\n        font-size: 13px;\n        color: #4b5563;\n        white-space: nowrap;\n        overflow: hidden;\n        text-overflow: ellipsis;\n    }\n\n    .status-chip {\n        display: inline-block;\n        padding: 5px 10px;\n        border-radius: 999px;\n        font-size: 12px;\n        font-weight: 600;\n        letter-spacing: 0.4px;\n        white-space: nowrap;\n        min-width: 86px;\n        text-align: center;\n    }\n\n    .chip-ok {\n        background: rgba(16, 185, 129, 0.12);\n        color: #047857;\n        border: 1px solid rgba(16, 185, 129, 0.35);\n    }\n\n    .chip-fail {\n        background: rgba(248, 113, 113, 0.15);\n        color: #b91c1c;\n        border: 1px solid rgba(248, 113, 113, 0.45);\n    }\n\n    .chip-warn {\n        background: rgba(245, 158, 11, 0.15);\n        color: #92400e;\n        border: 1px solid rgba(245, 158, 11, 0.45);\n    }\n\n    @keyframes fadeIn {\n        from { opacity: 0; transform: translateY(6px); }\n        to   { opacity: 1; transform: translateY(0); }\n    }\n</style>\n\n<div class=\"device-card\">\n    <div class=\"device-header\">\n        <div class=\"device-icon\">📡</div>\n        <div class=\"device-title\">Trạng thái kết nối</div>\n    </div>\n    <div class=\"device-subtitle\">Theo dõi Wi-Fi &amp; MQTT broker</div>\n\n    <div class=\"status-group\">\n        <!-- Wi-Fi block -->\n        <div class=\"status-block\">\n            <div class=\"block-icon\" id=\"wifiIcon\">📶</div>\n            <div class=\"block-text\">\n                <div class=\"block-title\">Wi-Fi</div>\n                <div id=\"wifiStatus\" class=\"block-sub\">Chưa có dữ liệu...</div>\n            </div>\n            <span id=\"wifiChip\" class=\"status-chip chip-warn\">UNKNOWN</span>\n        </div>\n\n        <!-- MQTT block -->\n        <div class=\"status-block\">\n            <div class=\"block-icon\" id=\"mqttIcon\">🔗</div>\n            <div class=\"block-text\">\n                <div class=\"block-title\">MQTT</div>\n                <div id=\"mqttStatus\" class=\"block-sub\">Broker đã cấu hình</div>\n            </div>\n            <span id=\"mqttChip\" class=\"status-chip chip-ok\">CONNECTED</span>\n        </div>\n    </div>\n</div>\n\n<script>\n(function(scope) {\n\n    scope.$watch(\"msg\", function(msg) {\n        if (!msg || !msg.topic) return;\n        if (msg.topic !== \"esp32/status/wifi\") return;\n\n        var text = String(msg.payload || \"\").trim();\n        var wifiStatusEl = document.getElementById(\"wifiStatus\");\n        var wifiChip     = document.getElementById(\"wifiChip\");\n        var wifiIcon     = document.getElementById(\"wifiIcon\");\n\n        if (!wifiStatusEl || !wifiChip || !wifiIcon) return;\n\n        // Cập nhật text\n        wifiStatusEl.innerText = text || \"Không rõ trạng thái\";\n\n        // Reset class chip\n        wifiChip.classList.remove(\"chip-ok\", \"chip-fail\", \"chip-warn\");\n\n        var upper = text.toUpperCase();\n\n        if (upper.includes(\"CONNECTED\")) {\n            wifiChip.innerText = \"CONNECTED\";\n            wifiChip.classList.add(\"chip-ok\");\n            wifiIcon.innerText = \"📶\";\n        } else if (upper.includes(\"DISCONNECTED\")) {\n            wifiChip.innerText = \"DISCONNECTED\";\n            wifiChip.classList.add(\"chip-fail\");\n            wifiIcon.innerText = \"📡\";\n        } else {\n            wifiChip.innerText = \"UNKNOWN\";\n            wifiChip.classList.add(\"chip-warn\");\n            wifiIcon.innerText = \"❔\";\n        }\n    });\n\n})(scope);\n</script>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 720,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c794f8699dc01922",
+        "type": "ui_template",
+        "z": "a4accac9d0025e72",
+        "group": "494ab6c75353c420",
+        "name": "CLOCK",
+        "order": 3,
+        "width": 13,
+        "height": 10,
+        "format": "<style>\n    .clock-card {\n        width: 100%;\n        max-width: 420px;\n        margin: 0 auto 16px auto;\n\n        background: linear-gradient(145deg, #ffffff, #f4f6ff);\n        padding: 16px 20px 14px 20px;\n        border-radius: 18px;\n        box-shadow: 0 4px 16px rgba(15, 23, 42, 0.12);\n        font-family: \"Poppins\", \"Segoe UI\", sans-serif;\n        border: 1px solid #e3e6ff;\n        animation: fadeInClock 0.3s ease;\n    }\n\n    .clock-header {\n        display: flex;\n        align-items: center;\n        justify-content: flex-start;\n        gap: 8px;\n        margin-bottom: 10px;\n    }\n\n    .clock-icon {\n        font-size: 22px;\n    }\n\n    .clock-title {\n        font-size: 17px;\n        font-weight: 700;\n        color: #374151;\n        letter-spacing: 0.3px;\n    }\n\n    .clock-time {\n        font-size: 40px;\n        font-weight: 700;\n        color: #6366f1;\n        text-align: center;\n        margin-bottom: 4px;\n        text-shadow: 0 2px 6px rgba(99, 102, 241, 0.26);\n    }\n\n    .clock-date {\n        font-size: 16px;\n        font-weight: 500;\n        color: #6b7280;\n        text-align: center;\n        letter-spacing: 0.4px;\n    }\n\n    @keyframes fadeInClock {\n        from {\n            opacity: 0;\n            transform: translateY(6px);\n        }\n        to {\n            opacity: 1;\n            transform: translateY(0);\n        }\n    }\n</style>\n\n<div class=\"clock-card\">\n    <div class=\"clock-header\">\n        <div class=\"clock-icon\">🕒</div>\n        <div class=\"clock-title\">Thời gian thực (GPS)</div>\n    </div>\n    <div id=\"timeText\" class=\"clock-time\">--:--:--</div>\n    <div id=\"dateText\" class=\"clock-date\">Đang tải...</div>\n</div>\n\n<script>\n(function(scope) {\n\n    function getDayOfWeek(dateStr) {\n        let d = new Date(dateStr);\n        let days = [\"Chủ Nhật\", \"Thứ 2\", \"Thứ 3\", \"Thứ 4\", \"Thứ 5\", \"Thứ 6\", \"Thứ 7\"];\n        return days[d.getDay()];\n    }\n\n    scope.$watch(\"msg\", function(msg) {\n        if (!msg || !msg.payload) return;\n\n        let gps = msg.payload[0];\n        if (!gps || !gps[\"Thời gian\"]) return;\n\n        let fullTime = gps[\"Thời gian\"];  // \"YYYY-MM-DD HH:MM:SS\"\n        let parts = fullTime.split(\" \");\n        if (parts.length < 2) return;\n\n        let date = parts[0];\n        let time = parts[1];\n\n        let dayName = getDayOfWeek(date);\n\n        document.getElementById(\"timeText\").innerText = time;\n        document.getElementById(\"dateText\").innerText = `${dayName} • ${date}`;\n    });\n\n})(scope);\n</script>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 880,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "51ba2862a6d557b4",
+        "type": "ui_template",
+        "z": "a4accac9d0025e72",
+        "group": "494ab6c75353c420",
+        "name": "Tác giả ",
+        "order": 4,
+        "width": 10,
+        "height": 10,
+        "format": "<style>\n    .author-card {\n        width: 100%;\n        max-width: 420px;\n        margin: 0 auto 16px auto;\n\n        background: linear-gradient(145deg, #ffffff, #f4f6ff);\n        padding: 16px 20px 14px 20px;\n        border-radius: 18px;\n        box-shadow: 0 4px 16px rgba(15, 23, 42, 0.12);\n        font-family: \"Poppins\", \"Segoe UI\", sans-serif;\n        border: 1px solid #e3e6ff;\n        animation: fadeInAuthor 0.3s ease;\n    }\n\n    .author-header {\n        display: flex;\n        align-items: center;\n        gap: 8px;\n        margin-bottom: 8px;\n    }\n\n    .author-icon {\n        font-size: 22px;\n    }\n\n    .author-title {\n        font-size: 17px;\n        font-weight: 700;\n        color: #374151;\n    }\n\n    .author-row {\n        display: flex;\n        align-items: flex-start;\n        gap: 8px;\n        font-size: 13px;\n        margin-bottom: 4px;\n        color: #4b5563;\n    }\n\n    .author-label {\n        font-weight: 600;\n        min-width: 68px;\n        color: #111827;\n    }\n\n    .author-link {\n        color: #2563eb;\n        font-weight: 600;\n        text-decoration: none;\n        word-break: break-all;\n    }\n\n    .author-link:hover {\n        text-decoration: underline;\n    }\n\n    @keyframes fadeInAuthor {\n        from {\n            opacity: 0;\n            transform: translateY(4px);\n        }\n\n        to {\n            opacity: 1;\n            transform: translateY(0);\n        }\n    }\n</style>\n\n<div class=\"author-card\">\n    <div class=\"author-header\">\n        <div class=\"author-icon\">👨‍💻</div>\n        <div class=\"author-title\">Thông tin tác giả</div>\n    </div>\n\n    <div class=\"author-row\">\n        <div class=\"author-label\">Tác giả:</div>\n        <div>Nguyễn Trung Đức</div>\n    </div>\n\n    <div class=\"author-row\">\n        <div class=\"author-label\">GitHub:</div>\n        <div>\n            <a class=\"author-link\" href=\"https://github.com/NguyenTrungDuc37/GPS_TRACKER-.git\" target=\"_blank\">\n                github.com/NguyenTrungDuc37/GPS_TRACKER-.git\n            </a>\n        </div>\n    </div>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1040,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eda297764ffc0f49",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6",
+            "node-red-node-email": "5.0.1"
+        }
+    }
+]

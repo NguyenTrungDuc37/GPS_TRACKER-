@@ -48,14 +48,12 @@ void handleBuzzer() {
 
   switch (buzzerStep) {
     case 0:
-      // Bật lần 1
       digitalWrite(BUZZER, HIGH);
       buzzerLastTime = now;
       buzzerStep = 1;
       break;
 
     case 1:
-      // Chờ 80 ms rồi tắt
       if (now - buzzerLastTime >= 80) {
         digitalWrite(BUZZER, LOW);
         buzzerLastTime = now;
@@ -64,7 +62,6 @@ void handleBuzzer() {
       break;
 
     case 2:
-      // Nghỉ 60 ms rồi bật lần 2
       if (now - buzzerLastTime >= 60) {
         digitalWrite(BUZZER, HIGH);
         buzzerLastTime = now;
@@ -73,7 +70,6 @@ void handleBuzzer() {
       break;
 
     case 3:
-      // Bật lần 2 trong 80 ms
       if (now - buzzerLastTime >= 80) {
         digitalWrite(BUZZER, LOW);
         buzzerLastTime = now;
@@ -82,7 +78,6 @@ void handleBuzzer() {
       break;
 
     case 4:
-      // Nghỉ 60 ms rồi kết thúc
       if (now - buzzerLastTime >= 60) {
         buzzerActive = false;
         buzzerStep = 0;
@@ -174,7 +169,6 @@ void readRFID() {
   uid.toUpperCase();
   Serial.println(uid);
 
-  // Khởi động chuỗi bíp 2 lần (non-blocking)
   if (!buzzerActive) {
     buzzerActive = true;
     buzzerStep = 0;
@@ -212,7 +206,7 @@ void loop() {
   setLED(gps.location.isValid());
   publishGPS();
   readRFID();
-  handleBuzzer();   // xử lý bíp theo thời gian
+  handleBuzzer();   
 
   // ===== DHT (non-blocking) =====
   if (millis() - lastDHT >= DHT_INTERVAL) {

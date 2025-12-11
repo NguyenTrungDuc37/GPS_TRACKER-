@@ -1013,5 +1013,14 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "eda297764ffc0f49",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6",
+            "node-red-node-email": "5.0.1"
+        }
     }
 ]

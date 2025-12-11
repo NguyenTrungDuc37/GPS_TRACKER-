@@ -116,6 +116,5 @@ Hệ thống này giúp các doanh nghiệp vận tải, dịch vụ xe công ng
 
 # 6 .VIDEO DEMO 
 
-https://github.com/NguyenTrungDuc37/GPS_TRACKER-/blob/main/7317507036114.mp4
-
+https://www.youtube.com/shorts/niAI03QYDjc
 
